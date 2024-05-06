@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Auth;
 
 use App\Models\User;
+use App\Notifications\TwoFactorCode;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -54,10 +55,21 @@ class LoginRequest extends FormRequest
             ]);
         }
 
+        // INSERT CODE IN DATA
+
         $user = User::where('email', $this->input('email'))->first();
         $user->generateCode();
 
-        RateLimiter::clear($this->throttleKey());
+
+        // send mail
+        $user->notify(new TwoFactorCode());
+
+
+        // send sms otp
+
+
+        // RateLimiter::clear($this->throttleKey());
+        RateLimiter::hit($this->throttleKey(), 60);
     }
 
     /**

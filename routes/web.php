@@ -19,7 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('/verify', [TwoFactorController::class, 'index'])->name('verify.index');
+
+Route::post('/verify', [TwoFactorController::class, 'store'])->name('verify.store');
+
+Route::match(['get', 'post'], '/verify/resendotp', [TwoFactorController::class, 'resendotp'])->name('verify.resendotp');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
