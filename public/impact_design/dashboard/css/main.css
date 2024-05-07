@@ -1,0 +1,58 @@
+body {
+    background-color: white;
+    font-family: "CerebriSansPro", sans-serif;
+}
+
+.left-column {
+    background-image: url("../../front/assets/img/brand/r4.png");
+
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.left_column_container {
+    padding: 60px;
+}
+
+.main_text_wrapper {
+    text-align: justify;
+}
+
+.right-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 550px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+/* Mobile Responsive CSS */
+@media (max-width: 767px) {
+    .left-column {
+        display: none;
+    }
+
+    .right-column {
+        height: auto;
+    }
+
+    .login-container {
+        margin-top: 20px;
+        /* Adjust margin if necessary */
+    }
+
+    .bg-left {
+        display: none;
+    }
+}

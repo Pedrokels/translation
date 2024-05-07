@@ -1,0 +1,231 @@
+body {
+    font-family: "CerebriSansPro", sans-serif;
+    background-color: white;
+    position: fixed;
+}
+
+.login-container {
+    margin-top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login_card {
+    width: 50%;
+}
+
+.left-column {
+    width: 40%;
+    float: left;
+    display: flex;
+    height: 100vh;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.fnri-logo {
+    margin: 50px;
+    position: fixed;
+    width: 10%;
+    z-index: 500;
+}
+
+.fnri-text {
+    margin-left: 50px;
+    width: 400px;
+}
+
+.fnri-logo-img {
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.wibot-text-div {
+    position: fixed;
+    width: 30%;
+    z-index: 1;
+}
+
+.main-text-wrapper {
+    margin-top: 150px;
+    width: 100%;
+    max-width: 530px;
+    text-align: justify;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    top: 150px;
+}
+
+.main-text-wrapper p {
+    font-size: 12px;
+}
+
+.doc_div {
+    width: 100%;
+    max-width: 530px;
+    text-align: justify;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    top: 680px;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.api_button,
+.doc_button {
+    margin-top: -210px;
+    width: 100%;
+    max-width: 350px;
+    font-size: 15px;
+}
+
+@media (max-width: 1650px) {
+    .login-container {
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 800px;
+    }
+    .r1 {
+        display: none;
+    }
+    .login_card {
+        width: 60%;
+    }
+    .fnri-logo,
+    .doc_div {
+        display: none;
+    }
+
+    .left-column {
+        background-color: white;
+    }
+    .carousel-item img {
+        opacity: 0;
+    }
+    .main-text-wrapper {
+        display: none;
+    }
+    .r1 {
+        display: none;
+    }
+}
+
+@media (max-width: 1400px) {
+    .login-container {
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 800px;
+    }
+    .r1 {
+        display: none;
+    }
+    .login_card {
+        width: 60%;
+    }
+    .fnri-logo,
+    .doc_div {
+        display: none;
+    }
+
+    .left-column {
+        background-color: white;
+    }
+    .carousel-item img {
+        opacity: 0;
+    }
+    .main-text-wrapper {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+    .r1 {
+        display: none;
+    }
+    .login_card {
+        width: 100%;
+        max-width: 420px;
+    }
+    .main-text-wrapper {
+        display: none;
+    }
+}
+@media (max-width: 576px) {
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+    .r1 {
+        display: none;
+    }
+
+    .login_card {
+        width: 100%;
+        max-width: 420px;
+    }
+    .main-text-wrapper {
+        display: none;
+    }
+}
+
+/* right column wave image */
+
+.r1 {
+    width: 100%;
+    max-width: 530px;
+    text-align: justify;
+    position: absolute;
+    left: 53.8%;
+    transform: translateX(-50%);
+    z-index: -1;
+    top: -1px;
+    height: 950px;
+}
