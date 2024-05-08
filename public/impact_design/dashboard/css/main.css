@@ -4,9 +4,9 @@ body {
 }
 
 .left-column {
-    background-image: url("../../front/assets/img/brand/r4.png");
-
-    background-size: cover;
+    background-image: url("../../front/assets/img/brand/10.png");
+    padding: 50px;
+    background-size: 100% 100%;
     background-position: center;
     height: 100vh;
     justify-content: center;

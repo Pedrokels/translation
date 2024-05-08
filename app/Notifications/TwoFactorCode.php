@@ -42,9 +42,7 @@ class TwoFactorCode extends Notification
     {
         return (new MailMessage)
             ->subject('Welcome to FNRI Translate ' . $notifiable->name . '!')
-            ->line('This is your code ' . $notifiable->code)
-            ->action('Click me!', route('verify.index'))
-            ->line('Thank you for using our application!');
+            ->view('emails.login_mail', ['notifiable' => $notifiable]);
     }
 
 

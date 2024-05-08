@@ -6,6 +6,64 @@
     @include('includes.impact')
     <!-- lEFT COLUMN CSS -->
 
+    <style>
+        .height-100 {
+            height: 100vh;
+        }
+
+        .inputs input {
+            width: 100%;
+
+            height: 70px;
+            box-shadow: 0 0 5px rgba(10, 72, 179, 0.5);
+            text-align: center;
+            font-size: 24px;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0;
+        }
+
+        .card-2 {
+            background-color: #fff;
+            padding: 10px;
+            width: 450px;
+            height: 100px;
+            bottom: -50px;
+            left: 20px;
+            position: absolute;
+            border-radius: 5px;
+        }
+
+        .card-2 .content {
+            margin-top: 50px;
+        }
+
+        .card-2 .content a {
+            color: #0A48B3;
+        }
+
+        @media (max-width: 767px) {
+            .inputs input {
+                width: 60px;
+                height: 70px;
+                font-size: 18px;
+            }
+
+            .card-2 {
+                width: 250px;
+                height: 80px;
+            }
+
+            .card-2 .content {
+                margin-top: 40px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -13,10 +71,7 @@
         <div class="row">
             @include('includes.left_column')
             <div class="col-md-7 col-sm-12 right-column">
-
-
                 <div class="login-container">
-
                     <br>
                     <div style="display:none;" id="countdown_end" class="mt-3 text-center alert alert-danger"
                         role="alert">
@@ -24,23 +79,16 @@
                     @if ($errors->any())
                         <div id="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
                             <strong>Error:</strong> {{ $errors->first('code') }}
-
                         </div>
                     @endif
-
-
                     <div class="text-center" id="countdown"></div>
-
                     <div class="hidden mt-3 text-center">
                         <h3>Please enter the One-time Password to verify your account</h3>
                     </div>
                     <div class="hidden mt-3 text-center">
                         <small>A code has been sent to
                             {{ substr_replace($user->email, '******', 2, strpos($user->email, '@') - 4) }}</small>
-
                     </div>
-
-
                     <form method="POST" action="{{ route('verify.store') }}">
                         @csrf
                         <div id="otp" class="flex-row mt-2 inputs d-flex justify-content-center">
@@ -56,19 +104,26 @@
                                 maxlength="1" name="code[]" inputmode="numeric" pattern="[0-9]" />
                             <input class="m-2 text-center rounded form-control" type="text" id="sixth"
                                 maxlength="1" name="code[]" inputmode="numeric" pattern="[0-9]" />
-
                         </div>
                         <div class="mt-4">
                             <button id="backtologin"
-                                style="width:100%; max-width:100%; height:70px; font-size:15px; margin-top:5px; id="validate"
-                                type="submit" class="px-4 btn btn-primary validate">Submit</button>
+                                style="width:100%; max-width:100%; height:70px; font-size:15px; margin-top:5px;
+                                "
+                                id="validate" type="submit" class="px-4 btn btn-primary validate">Submit</button>
                         </div>
                     </form>
-
-                    <div class="hidden mt-4">
-
+                    <div>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button
+                                style="width:100%; max-width:100%; height:70px; font-size:15px; margin-top:5px;
+                            "
+                                type="submit" class="btn btn-outline-danger">
+                                {{ __('Back') }}
+                            </button>
+                        </form>
                     </div>
-
+                    <div class="hidden mt-4"></div>
                     <div class="hidden mt-3 text-center">
                         <p>Didn't receive the code? </p><a href="{{ route('verify.resendotp') }}" id="resendLink"
                             class="px-4">Resend</a>
@@ -78,7 +133,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Bootstrap JS and other dependencies -->
     <script src="{{ asset('vendor/jquery/dist/jquery.min.js') }}"></script>
@@ -103,56 +157,7 @@
 
 </html>
 
-<style>
-    .height-100 {
-        height: 100vh
-    }
 
-    .inputs input {
-        width: 80px;
-        height: 70px;
-
-
-        box-shadow: 0 0 5px rgba(10, 72, 179, 0.5);
-
-
-    }
-
-    @media (max-width: 767px) {
-        .inputs input {
-            width: 60px;
-            height: 70px
-        }
-
-    }
-
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        margin: 0
-    }
-
-    .card-2 {
-        background-color: #fff;
-        padding: 10px;
-        width: 350px;
-        height: 100px;
-        bottom: -50px;
-        left: 20px;
-        position: absolute;
-        border-radius: 5px
-    }
-
-    .card-2 .content {
-        margin-top: 50px
-    }
-
-    .card-2 .content a {
-        color: #0A48B3
-    }
-</style>
 
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {

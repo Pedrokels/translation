@@ -22,12 +22,9 @@
 
 <div class="col-md-5 col-sm-12 left-column left-column-bg">
     <div class="main-text-wrapper">
-        <h1 class="wibot-text" style="">
-            <span style="font-family: Helvetica,Tahoma; font-size:50px;" class="text-white">Wibot </span>
-            <a href="" class="text-white typewrite" data-period="2000" data-type='[ "WiBot"]'>
-                <span class="wrap"></span>
-            </a>
-        </h1>
+        <img class="wibot-text" style="margin-left:-40px; width:100%; max-width:400px;"
+            src="{{ asset('impact_design/front/assets/img/brand/main_logo_blue.png') }}" alt="">
+
         <p class="text-white">____________________</p>
 
         {{--
@@ -75,6 +72,7 @@
                 <button style="" type="submit" class="btn btn-secondary doc_button">
                     Documentation
                 </button>
+
             </div>
             {{-- <div class="col-sm">
                 <button style="" type="submit" class="text-white btn btn-outline-success api_button">
@@ -82,6 +80,42 @@
                 </button>
             </div> --}}
         </div>
+
+
+        <div class="mt-5 row">
+            <div class="col-md-1">
+                <button type="button" class="btn btn-facebook btn-icon-only">
+                    <span class="btn-inner--icon"><i class="fab fa-facebook"></i></span>
+                </button>
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-twitter btn-icon-only">
+                    <span class="btn-inner--icon"><i class="fab fa-twitter"></i></span>
+                </button>
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-google-plus btn-icon-only">
+                    <span class="btn-inner--icon"><i class="fab fa-google-plus-g"></i></span>
+                </button>
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-instagram btn-icon-only">
+                    <span class="btn-inner--icon"><i class="fab fa-instagram"></i></span>
+                </button>
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-pinterest btn-icon-only">
+                    <span class="btn-inner--icon"><i class="fab fa-pinterest"></i></span>
+                </button>
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-youtube btn-icon-only">
+                    <span class="btn-inner--icon"><i class="fab fa-youtube"></i></span>
+                </button>
+            </div>
+        </div>
+
+
     </div>
 
 
